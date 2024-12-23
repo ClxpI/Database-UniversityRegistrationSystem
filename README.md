@@ -1,37 +1,51 @@
-# Database-UniversityRegistrationSystem
-This project showcases my capability in designing and building a relational database schema for a University Registration System. The schema efficiently stores and manages student information, courses, departments, and enrolment data.
+# **Database-UniversityRegistrationSystem**
 
-## Tables
+This project demonstrates my skills in designing and implementing a relational database schema for a **University Registration System**. The system efficiently handles and manages essential data related to students, courses, departments, and enrollment processes, ensuring data integrity and supporting complex queries.
 
-* **Student:** Stores student information such as ID, name, date of birth, admission term, expected graduation term, academic status, and academic load.
-* **Address:** Stores student addresses, including address type, street address, city, state, country, and zip code. (Foreign key references Student)
-* **Phone:** Stores student phone numbers, including phone type and phone number. (Foreign key references Student)
-* **Email:** Stores student email addresses, including email type and email address. (Foreign key references Student)
-* **Major:** Stores student majors, including major type (BS or BA) and department ID. (Foreign key references Student and Department)
-* **Minor:** Stores student minors and the department ID. (Foreign key references Student and Department)
-* **Department:** Stores department information, including department ID and department name.
-* **Course:** Stores course information, including course ID, department ID, course number, title, and credits. (Foreign key references Department)
-* **Goal:** Stores course goals, including goal ID and goal name.
-* **Course_Goal (junction table):** Establishes a many-to-many relationship between Courses and Goals. (Foreign key references Course and Goal)
-* **Transcript:** Stores student transcripts, including transcript ID, student ID, course ID, grade, and goal status. (Foreign key references Student and Course)
+---
 
-## Sample Queries
+## **Database Overview**
 
-The schema also includes sample queries that demonstrate how to retrieve data from various tables and relationships. These queries showcase functionalities like:
+### **Schema Design**
+The schema includes the following core tables:
 
-* Finding a student's contact information (address, phone, email) based on their student ID.
-* Retrieving a student's majors and minors.
-* Enrolling a student in a course.
-* Viewing a student's transcript with grades and goal statuses for each course.
-* Calculating the total credits earned by a student.
-* Finding courses that satisfy specific goals (Quantitative Reasoning, Critical Thinking).
+- **Student**: Stores student details such as ID, name, date of birth, admission term, expected graduation term, academic status, and academic load.
+- **Address**: Captures multiple student addresses, including type (e.g., campus, home) and location details. *(Linked to Student)*.
+- **Phone**: Records student phone numbers categorized by type (e.g., mobile, home). *(Linked to Student)*.
+- **Email**: Manages student email addresses, categorized by type (e.g., personal, university). *(Linked to Student)*.
+- **Major**: Tracks student majors, including type (BS or BA) and associated department. *(Linked to Student and Department)*.
+- **Minor**: Records student minors and their corresponding departments. *(Linked to Student and Department)*.
+- **Department**: Stores details of university departments.
+- **Course**: Contains information about courses such as ID, title, credits, and department. *(Linked to Department)*.
+- **Goal**: Lists academic goals (e.g., Quantitative Reasoning, Critical Thinking) associated with courses.
+- **Course_Goal**: A junction table establishing many-to-many relationships between courses and goals.
+- **Transcript**: Stores student transcripts, including grades, credits, and goal satisfaction. *(Linked to Student and Course)*.
 
-## ER Diagram
+### **Entity-Relationship Diagram**
+Below is the ER Diagram illustrating the relationships between entities in the database:
 
-![image](https://github.com/user-attachments/assets/1a8ee5a0-0422-4dfc-b289-b6f16dbdf14a)
+![image](https://github.com/user-attachments/assets/b8feea18-110b-4b5a-8907-f4ae7b02acd2)
 
+---
 
-## Files
-**All of this can be found in the files uploaded "Database.docx" and "DDL.sql"**
-**Feel free to explore the provided SQL code and adapt it to your specific university registration system needs.**
+## **Features**
 
+1. **Efficient Schema Design**:
+   - Supports scalability and relational integrity with primary and foreign key constraints.
+2. **Sample Queries**:
+   - Demonstrates how to retrieve and manipulate data within the schema. Examples include:
+     - Retrieving a student’s contact details (address, phone, email).
+     - Displaying a student’s transcript with grades and satisfied goals.
+     - Calculating the total credits earned by a student.
+     - Identifying courses that fulfill specific academic goals.
+3. **Normalization**:
+   - Ensures the database adheres to 1NF, 2NF, and 3NF standards to eliminate redundancies and anomalies.
+
+---
+
+## **Files Included**
+
+1. **Database.docx**: Contains detailed documentation of the schema, relationships, normalization, and queries.
+2. **DDL.sql**: SQL scripts for creating tables, defining relationships, and executing sample queries.
+
+---
